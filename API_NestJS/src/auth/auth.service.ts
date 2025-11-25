@@ -15,7 +15,7 @@ export class AuthService {
     private readonly configService: ConfigService,
   ) {
     const expirationTime = this.configService.get<number>('JWT_EXPIRATION_TIME');
-    this.jwtExpirationTimeInSeconds = expirationTime !== undefined ? expirationTime : 3600; // Valor padrão 3600
+    this.jwtExpirationTimeInSeconds = expirationTime !== undefined ? expirationTime : 3600; 
   }
 
   async signIn(username: string, password: string): Promise<AuthResponseDto> {
@@ -25,7 +25,6 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    // Log de senha para depuração
     console.log('Senha fornecida:', password);
     console.log('Senha armazenada (hash):', foundUser.password);
 
@@ -41,6 +40,9 @@ export class AuthService {
     const token = this.jwtService.sign(payload, {
       expiresIn: this.jwtExpirationTimeInSeconds,
     });
+
+    console.log('Token gerado:', token);
+
     return { token, expiresIn: this.jwtExpirationTimeInSeconds };
   }
 

@@ -1,0 +1,29 @@
+### 👉👉👉 JWT login 👈👈👈
+
+# @name Create User
+POST http://localhost:3000/users/register
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+    "username": "Jones Souza",
+    "password": "123123"
+}
+
+###
+
+# @name logar
+POST http://localhost:3000/users/login
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+    "username": "Jones Souza",
+    "password": "123123"
+}
+
+### Get Climated
+GET http://localhost:3000/climate
+Authorization: Bearer {{ token }}
+
+
