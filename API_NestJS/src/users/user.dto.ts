@@ -4,3 +4,7 @@ export class UserDto {
   password: string;
 }
 
+export interface CreateUserResponse {
+  id: string;
+  username: string;
+}

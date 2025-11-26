@@ -1,6 +1,6 @@
-### 👉👉👉 JWT login 👈👈👈
+### 👉👉👉 Rotas 👈👈👈
 
-# @name Create User
+### POST register
 POST http://localhost:3000/users/register
 Content-Type: application/json
 Origin: http://localhost:3000
@@ -10,9 +10,7 @@ Origin: http://localhost:3000
     "password": "123123"
 }
 
-###
-
-# @name logar
+### POST login
 POST http://localhost:3000/users/login
 Content-Type: application/json
 Origin: http://localhost:3000

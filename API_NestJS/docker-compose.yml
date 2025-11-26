@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: api-nest-fullstack-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: api-nest-fullstack
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker

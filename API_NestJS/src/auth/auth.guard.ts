@@ -8,17 +8,15 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 
-
 @Injectable()
 export class AuthGuard implements CanActivate {
   private jwtSecret: string;
-
   constructor(
     private readonly jwtService: JwtService,
     private readonly configService: ConfigService,
   ) {
-    // Se 'JWT_SECRET' não for encontrado, usa 'defaultSecret'
     this.jwtSecret = this.configService.get<string>('JWT_SECRET') ?? 'defaultSecret';
+
   }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
